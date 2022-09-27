@@ -9,7 +9,7 @@ import io.cucumber.testng.CucumberOptions;
 		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm" }, // reporting purpose
 		monochrome = true, // console output
 		// tags = {@tag1,@tag2,@tag3,@tag4}, //tags from feature file
-		publish = true, features = { "src/test/resources/features" }, // location of feature files
+		publish = true, features = { "src/test/resources/features/batch" }, // location of feature files
 		glue = "com.lms.stepdef") // location of step definition files
 
 public class TestRunner extends AbstractTestNGCucumberTests {

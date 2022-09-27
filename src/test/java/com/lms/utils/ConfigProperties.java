@@ -25,4 +25,7 @@ public class ConfigProperties {
 			
 	}
 
+	public static String getAppUrl() {
+		return getProperty("app.url");
+	}
 }

@@ -19,9 +19,9 @@ public class ProgramEditor {
 
 	private By editButtonBy = By.xpath("//tr[1]//button[contains(@icon,'pi pi-pencil')]");
 	private By programdetailsDialogBy = By.xpath("//div/span[text()='Program Details']");
-	private By addNewProgramBy = By.id("new");
+	//private By addNewProgramBy = By.id("new");
 	private By successAlertBy = By.xpath("//div[@role='alert']");
-	private By successAlertCloseBy = By.xpath("//div[@role='alert']//button");
+	//private By successAlertCloseBy = By.xpath("//div[@role='alert']//button");
 	private By errorMsgBy = By.xpath("//small");
 
 	public ProgramEditor() {
