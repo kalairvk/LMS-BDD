@@ -1,7 +1,7 @@
 #Author: Kalaipriya
 #Keywords Summary : Validate the heading feature for Manage Program page
 
-@tag
+
 Feature: ManageProgram Heading
 
   @tag1

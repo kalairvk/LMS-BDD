@@ -11,7 +11,7 @@
         </File>
     </Appenders>
     <Loggers>
-        <Logger name="com.dsalgo" level="debug" additivity="false">
+        <Logger name="com.lms" level="debug" additivity="false">
             <!-- <AppenderRef ref="LogToFile"/> -->
             <AppenderRef ref="LogToConsole"/>
             <AppenderRef ref="LogToFile"/>
