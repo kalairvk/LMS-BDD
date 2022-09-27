@@ -1,4 +1,4 @@
-package com.lms.stepdef;
+package com.lms.stepdef.program;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;

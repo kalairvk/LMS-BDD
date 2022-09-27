@@ -1,4 +1,4 @@
-package com.lms.model;
+package com.lms.model.program;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,8 +21,8 @@ public class LoginPage {
 	}
 	
 	public void Login() {
-		driver.findElement(By.id("username")).sendKeys("lms");
-		driver.findElement(By.id("password")).sendKeys("lms");
+		driver.findElement(By.id("username")).sendKeys(ConfigProperties.getProperty("user"));
+		driver.findElement(By.id("password")).sendKeys(ConfigProperties.getProperty("pwd"));
 		driver.findElement(submitloginBy).click();
 	}
 

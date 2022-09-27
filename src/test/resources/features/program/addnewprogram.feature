@@ -8,12 +8,7 @@ Feature: Add new program
     Given User is on Manage Program page	
     When User clicks "A New Program" button in program page
     Then User lands on Program Details Page dialog.
-    
-  Scenario: Click Cancel	
-    Given User is on Program Details Dialog	
-    When User clicks "Cancel" or close button	
-    Then User can see new Program Details form disappears 
-    
+
   Scenario: Empty form submission	
      Given User is on Program Details Dialog	
      When User clicks "Save" button without entering data	
@@ -37,5 +32,11 @@ Feature: Add new program
     Given User is on Program Details Dialog	
     When User clicks "Save" button on new program page
     Then User gets success message 'Successful Program Created'  
+    
+   Scenario: Click Cancel	
+    Given User is on Program Details Dialog	
+    When User clicks "Cancel" or close button	
+    Then User can see new Program Details form disappears   
+      
     
 

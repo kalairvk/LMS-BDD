@@ -1,4 +1,4 @@
-package com.lms.model;
+package com.lms.model.program;
 
 import java.time.Duration;
 
@@ -19,9 +19,9 @@ public class ProgramEditor {
 
 	private By editButtonBy = By.xpath("//tr[1]//button[contains(@icon,'pi pi-pencil')]");
 	private By programdetailsDialogBy = By.xpath("//div/span[text()='Program Details']");
-	private By addNewProgramBy = By.id("new");
+	//private By addNewProgramBy = By.id("new");
 	private By successAlertBy = By.xpath("//div[@role='alert']");
-	private By successAlertCloseBy = By.xpath("//div[@role='alert']//button");
+	//private By successAlertCloseBy = By.xpath("//div[@role='alert']//button");
 	private By errorMsgBy = By.xpath("//small");
 
 	public ProgramEditor() {
@@ -40,6 +40,7 @@ public class ProgramEditor {
 		String dialogHeader = driver.findElement(programdetailsDialogBy).getText();
 		if (dialogHeader.equalsIgnoreCase("Program Details")) {
 			logger.info("Program Details Modal Dialog box is present");
+			logger.info(dialogHeader);
 		} else {
 			logger.info("Program Details Modal Dialog box is not present");
 		}
@@ -90,6 +91,12 @@ public class ProgramEditor {
 	}
 
 	public String getSuccessAlertMsg() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		String msg = driver.findElement(successAlertBy).getText();
 		//driver.findElement(successAlertCloseBy).click();
 		return msg;
@@ -98,6 +105,8 @@ public class ProgramEditor {
 
 	public void addNewProgram(String addBtn) {
 		driver.findElement(By.xpath("//button[@label='" + addBtn + "']")).click();
+		var wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@role='dialog']/div[1]")));
 	}
 
 	public String getErrorMsgUnderNameField() {

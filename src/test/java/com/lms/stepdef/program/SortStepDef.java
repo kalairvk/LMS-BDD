@@ -1,4 +1,4 @@
-package com.lms.stepdef;
+package com.lms.stepdef.program;
 
 import static org.testng.Assert.assertTrue;
 
@@ -8,9 +8,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.google.common.collect.Ordering;
-import com.lms.model.LoginPage;
-import com.lms.model.ProgramEditor;
-import com.lms.model.ProgramPage;
+import com.lms.model.program.LoginPage;
+import com.lms.model.program.ProgramEditor;
+import com.lms.model.program.ProgramPage;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
