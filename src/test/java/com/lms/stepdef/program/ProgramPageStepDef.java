@@ -36,9 +36,9 @@ public class ProgramPageStepDef {
 		if(!programPage.isOpen()) {
 			loginpage.OpenURL();
 			loginpage.Login();
-		} else {
-			programPage.loadProgramPage();
 		}
+		programPage.loadProgramPage();
+		
 	}
 
 	@Then("User should see a heading with text {string} on the page")
