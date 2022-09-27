@@ -31,7 +31,7 @@ public class ManageUserDetailsStepdefinition {
 	
 	@Before
 	public void before() {
-		if(this.getClass().getName().equals("ManageUserDetailsStepdefinition")) { //run this only for this class
+		if(this.getClass().getSimpleName().equals("ManageUserDetailsStepdefinition")) { //run this only for this class
 			loginpage.OpenURL();
 			loginpage.Login();
 			manageUser.load();

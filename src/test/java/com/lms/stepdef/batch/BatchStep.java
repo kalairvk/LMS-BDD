@@ -459,6 +459,7 @@ public class BatchStep {
 
 	@When("Batch-user enters name in text box")
 	public void user_enters_name_in_text_box() throws InterruptedException {
+		batchpage.clickNewBatch();
 		batchpage.editBatchName();
 	}
 	@Then("Batch-User can see {string} entered")

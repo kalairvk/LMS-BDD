@@ -118,7 +118,7 @@ public class BatchPage {
 	public BatchPage(){
 		
 		this.driver = DriverProvider.getdriver();
-		wait = new WebDriverWait(this.driver,Duration.ofSeconds(1));
+		wait = new WebDriverWait(this.driver,Duration.ofSeconds(3));
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -244,8 +244,8 @@ public class BatchPage {
 		{
 			wait.until(ExpectedConditions.visibilityOf(batchDetailsHeading));
 			heading = batchDetailsHeading.getText();
-			cancelBtn.click();
-			wait.until(ExpectedConditions.invisibilityOf(batchDetailsHeading));
+			//cancelBtn.click();
+			//wait.until(ExpectedConditions.invisibilityOf(batchDetailsHeading));
 		}
 		else
 		{

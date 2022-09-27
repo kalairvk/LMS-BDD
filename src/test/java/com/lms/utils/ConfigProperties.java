@@ -32,4 +32,9 @@ public class ConfigProperties {
 	public static String getAssignmentSeacrhText() {
 		return getProperty("assignment.searchText");
 	}
+
+	public static String getBrowser() {
+		return getProperty("browser");
+
+	}
 }
