@@ -2,6 +2,7 @@ package com.lms.stepdef.manageuser;
 
 import static org.testng.Assert.assertEquals;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -15,6 +16,7 @@ import com.lms.model.manageuser.UserDetails;
 import com.lms.utils.ConfigProperties;
 import com.lms.utils.ExcelReader;
 
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -27,15 +29,24 @@ public class ManageUserDetailsStepdefinition {
 
 	Logger logger = LogManager.getLogger(ManageUserDetailsStepdefinition.class);
 	
+	@Before
+	public void before() {
+		if(this.getClass().getName().equals("ManageUserDetailsStepdefinition")) { //run this only for this class
+			loginpage.OpenURL();
+			loginpage.Login();
+			manageUser.load();
+		}
+	}
+	
 	@Given("User is on any page after Login")
 	public void user_is_on_any_page_after_login() {
 		
-		if(!manageUser.isOpen()) {
-			loginpage.OpenURL();
-			loginpage.Login();
-		} else {
-			manageUser.load();
-		}
+//		if(!manageUser.isOpen()) {
+//			loginpage.OpenURL();
+//			loginpage.Login();
+//		} else {
+//			manageUser.load();
+//		}
 	}
 
 	@When("User clicks the USER menu")
@@ -607,7 +618,7 @@ public class ManageUserDetailsStepdefinition {
 	public void user_clicks_save_button_by_entering_all_valid_values_from_and(String sheetName, Integer rowNumber) throws InvalidFormatException, IOException {
 		ExcelReader excelReader = new ExcelReader();
 		List<Map<String,String>> ValiduserDetails = 
-				excelReader.getData(ConfigProperties.getProperty("data.file.xl"), sheetName);
+				excelReader.getData(new File(".").getAbsolutePath()+"/"+ ConfigProperties.getProperty("data.file.xl"), sheetName);
 		
 		String FirstName = ValiduserDetails.get(rowNumber).get("FirstName");
 		String MiddleName = ValiduserDetails.get(rowNumber).get("MiddleName");
@@ -651,7 +662,7 @@ public class ManageUserDetailsStepdefinition {
 	public void user_clicks_save_button_by_entering_invalid_values_from_and(String sheetName, Integer rowNumber) throws InvalidFormatException, IOException {
 		ExcelReader excelReader = new ExcelReader();
 		List<Map<String,String>> ValiduserDetails = 
-				excelReader.getData(ConfigProperties.getProperty("data.file.xl"), sheetName);
+				excelReader.getData(new File(".").getAbsolutePath()+"/"+ConfigProperties.getProperty("data.file.xl"), sheetName);
 		
 		String FirstName = ValiduserDetails.get(rowNumber).get("FirstName");
 		String MiddleName = ValiduserDetails.get(rowNumber).get("MiddleName");

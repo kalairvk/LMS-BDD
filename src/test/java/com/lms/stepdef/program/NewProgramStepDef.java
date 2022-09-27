@@ -15,22 +15,20 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class NewProgramStepDef {
-	
+
 	private LoginPage loginpage = new LoginPage();
 	private ProgramPage programPage = new ProgramPage();
 	private ProgramEditor programEditor = new ProgramEditor();
 	private static Logger logger = LogManager.getLogger(ProgramPageStepDef.class);
-	
 
 	@Given("User is on Manage Program page")
 	public void user_is_on_manage_program_page() {
-		if(!programPage.isOpen()) {
+		if (!programPage.isOpen()) {
 			loginpage.OpenURL();
 			loginpage.Login();
-		} else {
-			programPage.loadProgramPage();
 		}
-		
+		programPage.loadProgramPage();
+
 	}
 
 	@When("User clicks {string} button in program page")
@@ -42,7 +40,7 @@ public class NewProgramStepDef {
 	public void user_lands_on_program_details_page_dialog() {
 		assertEquals(programEditor.getProgramDetailsDialogHeader(), "Program Details");
 	}
-	
+
 	@Given("User is on Program Details Dialog")
 	public void user_is_on_program_details() {
 		logger.info("Program Details dialog box opened after clicking add new program");
@@ -62,14 +60,14 @@ public class NewProgramStepDef {
 
 	@When("User enters {string} and {string} in the corresponding text boxes")
 	public void user_enters_and_in_the_corresponding_text_boxes(String name, String description) {
-		//programEditor.addProgram();
+		// programEditor.addProgram();
 		programEditor.setfield("programName", name);
 		programEditor.setfield("programDescription", description);
 	}
 
 	@Then("User can see the {string} and {string} entered")
 	public void user_can_see_the_and_entered(String name, String description) {
-		String progName= programEditor.checkPrognameEntered();
+		String progName = programEditor.checkPrognameEntered();
 		String progDesc = programEditor.checkProgdescEntered();
 		assertEquals(progName, name);
 		assertEquals(progDesc, description);
@@ -82,7 +80,7 @@ public class NewProgramStepDef {
 
 	@Then("User can see Active or Inactive status selected")
 	public void user_can_see_Active_or_Inactive_status_selected() {
-         assertEquals(programEditor.checkStatusSelected(), "Inactive");
+		assertEquals(programEditor.checkStatusSelected(), "Inactive");
 	}
 
 	@When("User clicks {string} button on new program page")
@@ -97,14 +95,12 @@ public class NewProgramStepDef {
 
 	@When("User clicks {string} or close button")
 	public void user_clicks_or_close_button(String cancelBtn) {
-        programEditor.clickCancel(cancelBtn);
+		programEditor.clickCancel(cancelBtn);
 	}
 
 	@Then("User can see new Program Details form disappears")
 	public void user_can_see_new_program_details_form_disappears() {
 		assertFalse(programEditor.isDialogOpen());
 	}
-
-
 
 }

@@ -6,13 +6,14 @@ import org.testng.Assert;
 
 import com.lms.model.home.Home;
 import com.lms.model.home.Registration;
+import com.lms.utils.DriverProvider;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class RegistrationStepdefinition {
-	private WebDriver driver;
+	private WebDriver driver = DriverProvider.getdriver();
 	private com.lms.model.program.LoginPage loginpage = new com.lms.model.program.LoginPage();
 	private Home hp = new Home();
 	private Registration rfp = new Registration();

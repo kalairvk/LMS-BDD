@@ -1,5 +1,6 @@
 package com.lms.stepdef.assignment;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -25,7 +26,7 @@ public class AssignmentPageTest {
 	Logger logger = LogManager.getLogger(AssignmentPageTest.class);
 
 	private com.lms.model.assignment.AssignmentPage assignmentPage = new com.lms.model.assignment.AssignmentPage();
-	private XLUtility utility = new XLUtility("DataFiles/AssignmentDetails.xlsx");
+	private XLUtility utility = new XLUtility(new File(".").getAbsolutePath()+"/target/test-classes/DataFiles/AssignmentDetails.xlsx");
 
 	private WebDriver driver = DriverProvider.getdriver();
 	
