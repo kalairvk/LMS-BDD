@@ -153,7 +153,7 @@ public class ProgramPage {
 				WebElement row = tableRows.get(i);
 				String data = row.findElement(By.xpath("//td[" + columnIndex + "]")).getText();
 
-				result.add(data);
+				result.add(data.strip().toLowerCase());
 			}
 			// Navigate to the next page if its available
 			boolean paginationNext = driver.findElement(paginationNextBy).isEnabled();

@@ -3,3 +3,4 @@ test-output/
 .project
 *.log
 lmsapp.log
+allure-results
