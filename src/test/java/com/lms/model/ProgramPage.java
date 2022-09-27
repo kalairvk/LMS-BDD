@@ -215,6 +215,12 @@ public class ProgramPage {
 	}
 
 	public String getSuccessDeletionAlert() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		return driver.findElement(successDeletionAlertBy).getText();
 	}
