@@ -1,4 +1,4 @@
-package com.lms.model;
+package com.lms.model.program;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

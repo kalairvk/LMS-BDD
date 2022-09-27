@@ -1,4 +1,4 @@
-package com.lms.model;
+package com.lms.model.program;
 
 import java.time.Duration;
 import java.util.ArrayList;

@@ -10,7 +10,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
-import com.lms.model.LoginPage;
 import com.lms.model.manageuser.ManageUser;
 import com.lms.model.manageuser.UserDetails;
 import com.lms.utils.ConfigProperties;
@@ -24,7 +23,7 @@ public class ManageUserDetailsStepdefinition {
 	
 	private ManageUser manageUser = new ManageUser();
 	private UserDetails userDetails = new UserDetails();
-	private LoginPage loginpage = new LoginPage();
+	private com.lms.model.program.LoginPage loginpage = new com.lms.model.program.LoginPage();
 
 	Logger logger = LogManager.getLogger(ManageUserDetailsStepdefinition.class);
 	

@@ -28,4 +28,8 @@ public class ConfigProperties {
 	public static String getAppUrl() {
 		return getProperty("app.url");
 	}
+
+	public static String getAssignmentSeacrhText() {
+		return getProperty("assignment.searchText");
+	}
 }
