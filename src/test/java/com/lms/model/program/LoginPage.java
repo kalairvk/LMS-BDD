@@ -10,6 +10,7 @@ public class LoginPage {
 
 	private WebDriver driver;
 	private By submitloginBy = By.id("login");
+	private By homepageHeaderBy = By.xpath("//mat-toolbar[@color='primary']/span[1]");
 
 	public LoginPage() {
 		this.driver = DriverProvider.getdriver();
@@ -26,4 +27,25 @@ public class LoginPage {
 		driver.findElement(submitloginBy).click();
 	}
 
+	
+
+	public void setfields(String fieldname, String value) {
+		driver.findElement(By.id(fieldname)).clear();
+		driver.findElement(By.id(fieldname)).sendKeys(value);
+	}
+
+	public void clickloginbtn() {
+		driver.findElement(submitloginBy).click();
+    }
+	
+	public String getErrorMsgForInvalidCredentials() {
+		return driver.findElement(By.id("errormessage")).getText().trim();
+		
+	}
+	
+	public String getHomepageHeader() {
+		return driver.findElement(homepageHeaderBy).getText().trim();
+	}
+
 }
+	

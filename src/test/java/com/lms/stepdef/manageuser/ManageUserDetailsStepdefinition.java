@@ -32,7 +32,7 @@ public class ManageUserDetailsStepdefinition {
 	
 	@Before
 	public void before(Scenario scenario) {
-		if(scenario.getUri().toString().contains("/user/")) { // this check will make sure we run this only for manage user scenarios. We do not want this for other scenarios
+		if(scenario.getUri().toString().contains("/3.user/")) { // this check will make sure we run this only for manage user scenarios. We do not want this for other scenarios
 			loginpage.OpenURL();
 			loginpage.Login();
 			manageUser.load();

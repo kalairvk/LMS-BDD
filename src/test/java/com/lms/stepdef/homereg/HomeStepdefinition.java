@@ -72,6 +72,6 @@ public class HomeStepdefinition {
 		public void user_should_see_logout_button_on_the_menu_bar()
 		{
 			Assert.assertTrue(hp.VerifyLogout());
-		}
+		}		
 
 }
