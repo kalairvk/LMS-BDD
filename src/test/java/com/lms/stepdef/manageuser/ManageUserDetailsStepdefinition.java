@@ -17,6 +17,7 @@ import com.lms.utils.ConfigProperties;
 import com.lms.utils.ExcelReader;
 
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -30,8 +31,8 @@ public class ManageUserDetailsStepdefinition {
 	Logger logger = LogManager.getLogger(ManageUserDetailsStepdefinition.class);
 	
 	@Before
-	public void before() {
-		if(this.getClass().getSimpleName().equals("ManageUserDetailsStepdefinition")) { //run this only for this class
+	public void before(Scenario scenario) {
+		if(scenario.getUri().toString().contains("/user/")) { // this check will make sure we run this only for manage user scenarios. We do not want this for other scenarios
 			loginpage.OpenURL();
 			loginpage.Login();
 			manageUser.load();
