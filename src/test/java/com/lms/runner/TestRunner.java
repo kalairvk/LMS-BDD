@@ -1,6 +1,9 @@
 package com.lms.runner;
 
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.DataProvider;
+
+import com.lms.utils.DriverProvider;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
@@ -18,6 +21,10 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 	@DataProvider(parallel = false)
 	public Object[][] scenarios() {
 		return super.scenarios();
+	}
+	@AfterSuite
+	public void shutdown() {
+		DriverProvider.quit();
 	}
 
 }
